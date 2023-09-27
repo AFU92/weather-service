@@ -2,8 +2,8 @@
 # This client retrieves weather data based on provided city and country.
 class WeatherbitClient
   include HTTParty
-  BASE_URL = 'https://api.weatherbit.io/v2.0/current'.freeze
-  API_KEY = ENV['WEATHERBIT_API_KEY'] # The API key is read from environment variables.
+  BASE_URL = ENV['WEATHERBIT_BASE_URL']
+  API_KEY = ENV['WEATHERBIT_API_KEY']
 
   # Retrieves temperature data for a given city and country.
   #
