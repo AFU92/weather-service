@@ -23,7 +23,7 @@ class WeatherController < ApplicationController
 
       render json: weather_data.to_h, status: :ok
     else
-      render json: { error: 'Parámetros city y country son requeridos.' }, status: :bad_request
+      render json: { error: 'city y country params are required.' }, status: :bad_request
     end
   end
 end
