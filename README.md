@@ -14,7 +14,6 @@ The `weather-service` project is a Rails-based application that provides weather
 
 - Ruby version: (Specify the version you're using, e.g., `3.2.2`)
 - Rails version: (Specify the version you're using, e.g., `7.0.8`)
-- Other dependencies: (List any other required packages or services, such as Redis if you're using it)
 
 ### Installation
 
