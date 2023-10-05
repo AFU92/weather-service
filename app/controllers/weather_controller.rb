@@ -13,7 +13,12 @@ class WeatherController < ApplicationController
     country = params[:country]
 
     if city && country
-      data = WeatherbitClient.get_temperature_data(city, country)
+      cache_key = "weather_data_#{city}_#{country}"
+
+      # Fetch data from cache or make an API call if not cached
+      data = Rails.cache.fetch(cache_key, expires_in: 10.minutes) do
+        WeatherbitClient.get_temperature_data(city, country)
+      end
 
       # Convert the client's response to a WeatherData object.
       weather_data = WeatherData.new(
